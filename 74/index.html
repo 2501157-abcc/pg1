@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+        <title>買い物リスト</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script defer src="js/script.js"></script>
+    </head>
+    <body>
+
+        <h2>買い物リスト</h2>
+
+        <form id="form">
+        <input id="name" placeholder="商品名" required>
+        <select id="category">
+            <option>食品</option>
+            <option>日用品</option>
+            <option>美容品</option>
+            <option>文房具</option>
+        </select>
+        <button>追加</button>
+        </form>
+
+        <label>カテゴリ表示：</label>
+        <select id="filter">
+            <option value="all">すべて</option>
+            <option>食品</option>
+            <option>日用品</option>
+            <option>美容品</option>
+            <option>文房具</option>
+        </select>
+        
+        <p id="count"></p>
+
+        <ul id="list"></ul>
+
+        
+
+    </body>
+</html>

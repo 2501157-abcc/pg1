@@ -1,0 +1,162 @@
+:root {
+  --main-blue: #4da3ff;
+  --light-blue: #eaf4ff;
+  --accent-blue: #1e7fe8;
+  --bg: #f7fbff;
+  --text: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
+  background: linear-gradient(180deg, #dff0ff, #ffffff);
+  margin: 0;
+  padding: 20px;
+  color: var(--text);
+}
+
+h2 {
+  text-align: center;
+  color: var(--accent-blue);
+  margin-bottom: 15px;
+}
+
+/* ===== フォーム ===== */
+
+form {
+  background: white;
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--light-blue);
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--main-blue);
+}
+
+/* 追加ボタン */
+
+form button {
+  background: var(--main-blue);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+form button:hover {
+  background: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+/* ===== フィルター ===== */
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#filter {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* ===== リスト ===== */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: white;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 商品名部分 */
+
+li span {
+  flex: 1;
+  font-weight: bold;
+}
+
+/* ===== ボタン共通 ===== */
+
+li button {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+/* 編集 */
+
+li button:nth-of-type(1) {
+  background: #ffe08a;
+}
+
+/* 削除 */
+
+li button:nth-of-type(2) {
+  background: #ff9aa2;
+}
+
+/* 並び替え */
+
+li button:nth-of-type(3),
+li button:nth-of-type(4) {
+  background: var(--light-blue);
+}
+
+li button:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+/* ===== スマホ対応 ===== */
+
+@media (max-width: 500px) {
+  form {
+    flex-direction: column;
+  }
+
+  input, select, form button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
