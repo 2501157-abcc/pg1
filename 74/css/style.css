@@ -1,42 +1,79 @@
+/********************************
+ * カラーテーマ変数の定義
+ ********************************/
+
+/* :root はHTML全体に適用される変数の置き場所 */
 :root {
-  --main-blue: #4da3ff;
-  --light-blue: #eaf4ff;
-  --accent-blue: #1e7fe8;
-  --bg: #f7fbff;
-  --text: #333;
+  --main-blue: #4da3ff;     /* メインカラー */
+  --light-blue: #eaf4ff;    /* 薄い青（背景・ボタン用） */
+  --accent-blue: #1e7fe8;   /* 濃い青（強調用） */
+  --bg: #f7fbff;            /* 全体背景色 */
+  --text: #333;             /* 文字色 */
 }
 
+
+/********************************
+ * 全要素共通の設定
+ ********************************/
+
+/* paddingやborderを含めてサイズ計算する */
 * {
   box-sizing: border-box;
 }
 
+
+/********************************
+ * ページ全体のデザイン
+ ********************************/
+
 body {
+  /* フォント指定（Windows / Mac 両対応） */
   font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
+
+  /* 上から下にかけて薄くなる青のグラデーション */
   background: linear-gradient(180deg, #dff0ff, #ffffff);
+
   margin: 0;
   padding: 20px;
+
+  /* 基本文字色 */
   color: var(--text);
 }
 
+
+/********************************
+ * タイトル
+ ********************************/
+
 h2 {
-  text-align: center;
-  color: var(--accent-blue);
+  text-align: center;              /* 中央揃え */
+  color: var(--accent-blue);       /* 強調用の青 */
   margin-bottom: 15px;
 }
 
-/* ===== フォーム ===== */
+
+/********************************
+ * 入力フォームのデザイン
+ ********************************/
 
 form {
-  background: white;
+  background: white;               /* カード風に白背景 */
   padding: 12px;
-  border-radius: 14px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  border-radius: 14px;             /* 角を丸く */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* 影で浮かせる */
+
+  display: flex;                   /* 横並び配置 */
+  gap: 8px;                        /* 要素間の隙間 */
+  flex-wrap: wrap;                 /* 画面が狭い時に折り返す */
   justify-content: center;
+
   margin-bottom: 12px;
 }
+
+
+/********************************
+ * 入力欄とセレクト共通デザイン
+ ********************************/
 
 input, select {
   padding: 10px;
@@ -45,12 +82,16 @@ input, select {
   font-size: 14px;
 }
 
+/* フォーカス時（入力中） */
 input:focus, select:focus {
-  outline: none;
-  border-color: var(--main-blue);
+  outline: none;                   /* 青枠を消す */
+  border-color: var(--main-blue);  /* メインカラー表示 */
 }
 
-/* 追加ボタン */
+
+/********************************
+ * 追加ボタン
+ ********************************/
 
 form button {
   background: var(--main-blue);
@@ -60,18 +101,24 @@ form button {
   padding: 10px 16px;
   font-size: 14px;
   cursor: pointer;
+
+  /* ホバー時のなめらか変化 */
   transition: 0.2s;
 }
 
+/* マウスを乗せた時 */
 form button:hover {
   background: var(--accent-blue);
-  transform: translateY(-1px);
+  transform: translateY(-1px);     /* 少し浮かせる */
 }
 
-/* ===== フィルター ===== */
+
+/********************************
+ * フィルター表示部分
+ ********************************/
 
 label {
-  display: block;
+  display: block;                  /* 改行して中央寄せ */
   margin: 10px 0 5px;
   text-align: center;
   font-weight: bold;
@@ -79,37 +126,53 @@ label {
 
 #filter {
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto 10px;             /* 中央寄せ */
 }
 
-/* ===== リスト ===== */
+
+/********************************
+ * リスト全体
+ ********************************/
 
 ul {
-  list-style: none;
+  list-style: none;                /* ・を消す */
   padding: 0;
   margin: 0;
 }
+
+
+/********************************
+ * 各アイテムカード
+ ********************************/
 
 li {
   background: white;
   border-radius: 14px;
   padding: 10px 12px;
   margin-bottom: 10px;
+
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  display: flex;
-  flex-wrap: wrap;
+
+  display: flex;                   /* 横並び */
+  flex-wrap: wrap;                 /* 狭い画面では折返し */
   align-items: center;
   gap: 6px;
 }
 
-/* 商品名部分 */
+
+/********************************
+ * 商品名表示部分
+ ********************************/
 
 li span {
-  flex: 1;
+  flex: 1;                         /* 横幅を最大まで広げる */
   font-weight: bold;
 }
 
-/* ===== ボタン共通 ===== */
+
+/********************************
+ * リスト内ボタン共通設定
+ ********************************/
 
 li button {
   border: none;
@@ -120,41 +183,51 @@ li button {
   transition: 0.2s;
 }
 
-/* 編集 */
 
+/********************************
+ * ボタン個別カラー設定
+ ********************************/
+
+/* 編集ボタン */
 li button:nth-of-type(1) {
-  background: #ffe08a;
+  background: #ffe08a;             /* 黄色 */
 }
 
-/* 削除 */
-
+/* 削除ボタン */
 li button:nth-of-type(2) {
-  background: #ff9aa2;
+  background: #ff9aa2;             /* 赤ピンク */
 }
 
-/* 並び替え */
-
+/* 並び替えボタン */
 li button:nth-of-type(3),
 li button:nth-of-type(4) {
-  background: var(--light-blue);
+  background: var(--light-blue);   /* 薄い青 */
 }
 
+/* ボタンホバー時 */
 li button:hover {
-  filter: brightness(0.9);
-  transform: translateY(-1px);
+  filter: brightness(0.9);         /* 少し暗く */
+  transform: translateY(-1px);     /* 浮く */
 }
 
-/* ===== スマホ対応 ===== */
+
+/********************************
+ * スマホ対応（レスポンシブ）
+ ********************************/
 
 @media (max-width: 500px) {
+
+  /* フォームを縦並びに */
   form {
     flex-direction: column;
   }
 
+  /* 入力欄とボタンを横幅100% */
   input, select, form button {
     width: 100%;
   }
 
+  /* リスト内も縦配置 */
   li {
     flex-direction: column;
     align-items: stretch;
